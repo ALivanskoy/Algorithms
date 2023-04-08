@@ -14,8 +14,8 @@ public class Main {
             ls.addLast(r.nextInt(10));
         }
 
-        System.out.println(ls);
+        System.out.println("Сгенерированный лист: " + ls);
         ls.revert();
-        System.out.println(ls);
+        System.out.println("Развёрнутый лист: " + ls);
     }
 }

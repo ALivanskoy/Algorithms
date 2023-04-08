@@ -7,7 +7,6 @@ public class LinkedList {
     private Node head;
     private Node tail;
 
-
     private static class Node implements Iterator {
         private final Integer value;
         private Node nextNode;
@@ -24,14 +23,12 @@ public class LinkedList {
 
         @Override
         public boolean hasNext() {
-
-            if (nextNode != null)
-                return true;
+            if (nextNode != null) return true;
             else return false;
         }
 
         @Override
-        public Node next() {
+        public Object next() {
             return nextNode;
         }
     }
@@ -76,8 +73,6 @@ public class LinkedList {
         Node node = head;
 
         while (node != null) {
-            System.out.println("чпок");
-
             Node next = node.nextNode;
             Node previous = node.previousNode;
             node.nextNode = previous;
@@ -93,11 +88,11 @@ public class LinkedList {
         Node node = head;
         StringBuilder sb = new StringBuilder("[");
 
-        do {
+        while (node != null) {
             sb.append(node);
             if (node.nextNode != null) sb.append(", ");
             node = node.nextNode;
-        } while (node.hasNext());
+        }
 
         sb.append("]");
         return sb.toString();
